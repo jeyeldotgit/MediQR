@@ -1,0 +1,19 @@
+-- Client App Features --
+**For Patients**
+
+- 🔑 Login / Register
+- 📝 Profile Form (fill/update)
+- 🧾 My Records (list)
+- 📲 My QR Code (view/print)
+
+**For Staff**
+
+- 🔑 Staff Login
+- 📷 Scan QR (camera-based page)
+- 👤 Patient Profile & Records (after scan)
+- ➕ Add New Record
+
+1. Follow the tailwind theme for color schema
+2. Follow Folder Structure when creating pages and components
+3. Don't overcomplicate coding style keep it functional and in smaller components
+4. Use Console Logs in UseEffects (API Prototyping or Simulation)

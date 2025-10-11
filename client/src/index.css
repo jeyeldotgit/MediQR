@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@theme {
+  --color-mediqr-light: #fdecec; /* soft red background */
+  --color-mediqr: #d32f2f; /* main medical red */
+  --color-mediqr-dark: #b71c1c; /* deeper red for headers/buttons */
+  --color-mediqr-accent: #ef5350; /* lighter accent red */
+  --color-mediqr-accent-light: #ffebee; /* gentle red tint background */
+  --color-mediqr-neutral: #fafafa; /* neutral background */
+  --color-mediqr-text: #2c2c2c; /* readable dark text */
+  --color-mediqr-danger: #c62828; /* error / emergency */
+  --color-mediqr-warning: #fb8c00; /* caution / pending */
+  --color-mediqr-success: #43a047; /* success / verified */
+}
