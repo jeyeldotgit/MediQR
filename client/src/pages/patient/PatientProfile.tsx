@@ -116,28 +116,30 @@ const PatientProfile = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="text-lg">Loading profile...</div>
+        <div className="text-lg text-mediqr-text">Loading profile...</div>
       </div>
     );
   }
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-white shadow rounded-lg">
+      <div className="bg-white shadow rounded-lg border border-mediqr-accent-light">
         <div className="px-4 py-5 sm:p-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-6">My Profile</h1>
+          <h1 className="text-2xl font-bold text-mediqr-text mb-6">
+            My Profile
+          </h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Information */}
-            <div className="border-b border-gray-200 pb-6">
-              <h2 className="text-lg font-medium text-gray-900 mb-4">
+            <div className="border-b border-mediqr-accent-light pb-6">
+              <h2 className="text-lg font-medium text-mediqr-text mb-4">
                 Personal Information
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label
                     htmlFor="firstName"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-mediqr-text"
                   >
                     First Name
                   </label>
@@ -147,13 +149,13 @@ const PatientProfile = () => {
                     id="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="lastName"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-mediqr-text"
                   >
                     Last Name
                   </label>
@@ -163,13 +165,13 @@ const PatientProfile = () => {
                     id="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-mediqr-text"
                   >
                     Email
                   </label>
@@ -179,13 +181,13 @@ const PatientProfile = () => {
                     id="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-mediqr-text"
                   >
                     Phone
                   </label>
@@ -195,13 +197,13 @@ const PatientProfile = () => {
                     id="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="dateOfBirth"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-mediqr-text"
                   >
                     Date of Birth
                   </label>
@@ -211,13 +213,13 @@ const PatientProfile = () => {
                     id="dateOfBirth"
                     value={formData.dateOfBirth}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="address"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-mediqr-text"
                   >
                     Address
                   </label>
@@ -227,22 +229,22 @@ const PatientProfile = () => {
                     rows={3}
                     value={formData.address}
                     onChange={handleInputChange}
-                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   />
                 </div>
               </div>
             </div>
 
             {/* Emergency Contact */}
-            <div className="border-b border-gray-200 pb-6">
-              <h2 className="text-lg font-medium text-gray-900 mb-4">
+            <div className="border-b border-mediqr-accent-light pb-6">
+              <h2 className="text-lg font-medium text-mediqr-text mb-4">
                 Emergency Contact
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                   <label
                     htmlFor="emergencyName"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-mediqr-text"
                   >
                     Name
                   </label>
@@ -252,13 +254,13 @@ const PatientProfile = () => {
                     id="emergencyName"
                     value={formData.emergencyContact.name}
                     onChange={handleEmergencyContactChange}
-                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="emergencyPhone"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-mediqr-text"
                   >
                     Phone
                   </label>
@@ -268,13 +270,13 @@ const PatientProfile = () => {
                     id="emergencyPhone"
                     value={formData.emergencyContact.phone}
                     onChange={handleEmergencyContactChange}
-                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="emergencyRelationship"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-mediqr-text"
                   >
                     Relationship
                   </label>
@@ -284,7 +286,7 @@ const PatientProfile = () => {
                     id="emergencyRelationship"
                     value={formData.emergencyContact.relationship}
                     onChange={handleEmergencyContactChange}
-                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   />
                 </div>
               </div>
@@ -292,14 +294,14 @@ const PatientProfile = () => {
 
             {/* Medical Information */}
             <div className="space-y-6">
-              <h2 className="text-lg font-medium text-gray-900">
+              <h2 className="text-lg font-medium text-mediqr-text">
                 Medical Information
               </h2>
 
               <div>
                 <label
                   htmlFor="medicalHistory"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-mediqr-text"
                 >
                   Medical History (comma-separated)
                 </label>
@@ -310,7 +312,7 @@ const PatientProfile = () => {
                   onChange={(e) =>
                     handleArrayFieldChange("medicalHistory", e.target.value)
                   }
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   placeholder="e.g., Hypertension, Diabetes"
                 />
               </div>
@@ -318,7 +320,7 @@ const PatientProfile = () => {
               <div>
                 <label
                   htmlFor="allergies"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-mediqr-text"
                 >
                   Allergies (comma-separated)
                 </label>
@@ -329,7 +331,7 @@ const PatientProfile = () => {
                   onChange={(e) =>
                     handleArrayFieldChange("allergies", e.target.value)
                   }
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   placeholder="e.g., Penicillin, Shellfish"
                 />
               </div>
@@ -337,7 +339,7 @@ const PatientProfile = () => {
               <div>
                 <label
                   htmlFor="medications"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-mediqr-text"
                 >
                   Current Medications (comma-separated)
                 </label>
@@ -348,7 +350,7 @@ const PatientProfile = () => {
                   onChange={(e) =>
                     handleArrayFieldChange("medications", e.target.value)
                   }
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   placeholder="e.g., Metformin, Lisinopril"
                 />
               </div>
@@ -358,8 +360,8 @@ const PatientProfile = () => {
               <div
                 className={`text-sm ${
                   message.includes("success")
-                    ? "text-green-600"
-                    : "text-red-600"
+                    ? "text-mediqr-success"
+                    : "text-mediqr-danger"
                 }`}
               >
                 {message}
@@ -370,7 +372,7 @@ const PatientProfile = () => {
               <button
                 type="submit"
                 disabled={saving}
-                className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+                className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-mediqr hover:bg-mediqr-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediqr disabled:opacity-50 transition-colors"
               >
                 {saving ? "Saving..." : "Save Profile"}
               </button>

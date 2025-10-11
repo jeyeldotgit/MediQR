@@ -35,11 +35,11 @@ const PatientRecords = () => {
 
   const getRecordTypeColor = (type: string) => {
     const colors = {
-      consultation: "bg-blue-100 text-blue-800",
-      prescription: "bg-green-100 text-green-800",
-      lab_result: "bg-yellow-100 text-yellow-800",
-      procedure: "bg-purple-100 text-purple-800",
-      other: "bg-gray-100 text-gray-800",
+      consultation: "bg-mediqr-accent-light text-mediqr",
+      prescription: "bg-mediqr-success/20 text-mediqr-success",
+      lab_result: "bg-mediqr-warning/20 text-mediqr-warning",
+      procedure: "bg-mediqr-accent/20 text-mediqr-accent",
+      other: "bg-mediqr-neutral text-mediqr-text",
     };
     return colors[type as keyof typeof colors] || colors.other;
   };
@@ -62,23 +62,23 @@ const PatientRecords = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="text-lg">Loading records...</div>
+        <div className="text-lg text-mediqr-text">Loading records...</div>
       </div>
     );
   }
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="bg-white shadow rounded-lg">
+      <div className="bg-white shadow rounded-lg border border-mediqr-accent-light">
         <div className="px-4 py-5 sm:p-6">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-2xl font-bold text-mediqr-text">
               My Medical Records
             </h1>
             <div className="flex items-center space-x-4">
               <label
                 htmlFor="filter"
-                className="text-sm font-medium text-gray-700"
+                className="text-sm font-medium text-mediqr-text"
               >
                 Filter by type:
               </label>
@@ -86,7 +86,7 @@ const PatientRecords = () => {
                 id="filter"
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
-                className="border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
               >
                 <option value="all">All Records</option>
                 <option value="consultation">Consultations</option>
@@ -100,8 +100,10 @@ const PatientRecords = () => {
 
           {filteredRecords.length === 0 ? (
             <div className="text-center py-12">
-              <div className="text-gray-500 text-lg">No records found</div>
-              <div className="text-gray-400 text-sm mt-2">
+              <div className="text-mediqr-text/70 text-lg">
+                No records found
+              </div>
+              <div className="text-mediqr-text/50 text-sm mt-2">
                 {filter === "all"
                   ? "You don't have any medical records yet."
                   : `No ${getRecordTypeLabel(
@@ -114,14 +116,14 @@ const PatientRecords = () => {
               {filteredRecords.map((record) => (
                 <div
                   key={record.id}
-                  className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+                  className="border border-mediqr-accent-light rounded-lg p-6 hover:shadow-md transition-shadow"
                 >
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">
+                      <h3 className="text-lg font-semibold text-mediqr-text">
                         {record.title}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-mediqr-text/70">
                         {record.description}
                       </p>
                     </div>
@@ -133,7 +135,7 @@ const PatientRecords = () => {
                       >
                         {getRecordTypeLabel(record.type)}
                       </span>
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-mediqr-text/60">
                         {formatDateTime(record.date)}
                       </span>
                     </div>
@@ -141,10 +143,10 @@ const PatientRecords = () => {
 
                   {record.diagnosis && (
                     <div className="mb-3">
-                      <h4 className="text-sm font-medium text-gray-700">
+                      <h4 className="text-sm font-medium text-mediqr-text">
                         Diagnosis:
                       </h4>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-mediqr-text/70">
                         {record.diagnosis}
                       </p>
                     </div>
@@ -152,10 +154,10 @@ const PatientRecords = () => {
 
                   {record.treatment && (
                     <div className="mb-3">
-                      <h4 className="text-sm font-medium text-gray-700">
+                      <h4 className="text-sm font-medium text-mediqr-text">
                         Treatment:
                       </h4>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-mediqr-text/70">
                         {record.treatment}
                       </p>
                     </div>
@@ -163,14 +165,14 @@ const PatientRecords = () => {
 
                   {record.medications && record.medications.length > 0 && (
                     <div className="mb-3">
-                      <h4 className="text-sm font-medium text-gray-700">
+                      <h4 className="text-sm font-medium text-mediqr-text">
                         Medications:
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {record.medications.map((med, index) => (
                           <span
                             key={index}
-                            className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-green-100 text-green-800"
+                            className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-mediqr-success/20 text-mediqr-success"
                           >
                             {med}
                           </span>
@@ -181,16 +183,18 @@ const PatientRecords = () => {
 
                   {record.notes && (
                     <div className="mb-3">
-                      <h4 className="text-sm font-medium text-gray-700">
+                      <h4 className="text-sm font-medium text-mediqr-text">
                         Notes:
                       </h4>
-                      <p className="text-sm text-gray-600">{record.notes}</p>
+                      <p className="text-sm text-mediqr-text/70">
+                        {record.notes}
+                      </p>
                     </div>
                   )}
 
                   {record.attachments && record.attachments.length > 0 && (
                     <div>
-                      <h4 className="text-sm font-medium text-gray-700">
+                      <h4 className="text-sm font-medium text-mediqr-text">
                         Attachments:
                       </h4>
                       <div className="flex flex-wrap gap-2">
@@ -198,7 +202,7 @@ const PatientRecords = () => {
                           <a
                             key={index}
                             href="#"
-                            className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200"
+                            className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-mediqr-neutral text-mediqr-text hover:bg-mediqr-accent-light transition-colors"
                           >
                             📎 {attachment}
                           </a>

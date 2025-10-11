@@ -21,13 +21,13 @@ const Layout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-mediqr-neutral">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-white shadow-sm border-b border-mediqr-accent-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-xl font-bold text-gray-900">MediQr</h1>
+              <h1 className="text-xl font-bold text-mediqr-dark">MediQr</h1>
             </div>
 
             <div className="flex items-center space-x-4">
@@ -35,19 +35,19 @@ const Layout = () => {
                 <nav className="hidden md:flex space-x-8">
                   <button
                     onClick={() => navigate("/patient/profile")}
-                    className="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-mediqr-text/70 hover:text-mediqr px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   >
                     Profile
                   </button>
                   <button
                     onClick={() => navigate("/patient/records")}
-                    className="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-mediqr-text/70 hover:text-mediqr px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   >
                     My Records
                   </button>
                   <button
                     onClick={() => navigate("/patient/qr-code")}
-                    className="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-mediqr-text/70 hover:text-mediqr px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   >
                     My QR Code
                   </button>
@@ -58,13 +58,13 @@ const Layout = () => {
                 <nav className="hidden md:flex space-x-8">
                   <button
                     onClick={() => navigate("/staff/scanner")}
-                    className="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-mediqr-text/70 hover:text-mediqr px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   >
                     Scanner
                   </button>
                   <button
                     onClick={() => navigate("/staff/add-record")}
-                    className="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-mediqr-text/70 hover:text-mediqr px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   >
                     Add Record
                   </button>
@@ -73,7 +73,7 @@ const Layout = () => {
 
               <button
                 onClick={handleLogout}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium"
+                className="bg-mediqr-danger hover:bg-mediqr-danger/90 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 Logout
               </button>

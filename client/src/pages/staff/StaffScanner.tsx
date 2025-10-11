@@ -106,26 +106,28 @@ const StaffScanner = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-white shadow rounded-lg">
+      <div className="bg-white shadow rounded-lg border border-mediqr-accent-light">
         <div className="px-4 py-5 sm:p-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-6">
+          <h1 className="text-2xl font-bold text-mediqr-text mb-6">
             QR Code Scanner
           </h1>
 
           <div className="text-center">
             {/* Camera Preview Area */}
-            <div className="bg-gray-100 rounded-lg p-8 mb-6">
-              <div className="inline-block bg-white p-4 rounded-lg shadow-sm">
-                <div className="w-80 h-60 bg-gray-200 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+            <div className="bg-mediqr-accent-light rounded-lg p-8 mb-6">
+              <div className="inline-block bg-white p-4 rounded-lg shadow-sm border border-mediqr-accent-light">
+                <div className="w-80 h-60 bg-mediqr-neutral rounded-lg flex items-center justify-center border-2 border-dashed border-mediqr-accent">
                   {scanning ? (
                     <div className="text-center">
-                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-                      <div className="text-sm text-gray-600">Scanning...</div>
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-mediqr mx-auto mb-4"></div>
+                      <div className="text-sm text-mediqr-text/70">
+                        Scanning...
+                      </div>
                     </div>
                   ) : (
                     <div className="text-center">
                       <div className="text-6xl mb-4">📷</div>
-                      <div className="text-sm text-gray-500">
+                      <div className="text-sm text-mediqr-text/70">
                         Camera Preview
                       </div>
                     </div>
@@ -136,24 +138,24 @@ const StaffScanner = () => {
 
             {/* Status Messages */}
             {message && (
-              <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-                <div className="text-green-800 text-sm">{message}</div>
+              <div className="mb-4 p-4 bg-mediqr-success/20 border border-mediqr-success/30 rounded-lg">
+                <div className="text-mediqr-success text-sm">{message}</div>
               </div>
             )}
 
             {error && (
-              <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-                <div className="text-red-800 text-sm">{error}</div>
+              <div className="mb-4 p-4 bg-mediqr-danger/20 border border-mediqr-danger/30 rounded-lg">
+                <div className="text-mediqr-danger text-sm">{error}</div>
               </div>
             )}
 
             {/* Scanned Data Display */}
             {scannedData && (
-              <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                <h3 className="text-sm font-medium text-gray-700 mb-2">
+              <div className="mb-6 p-4 bg-mediqr-neutral rounded-lg">
+                <h3 className="text-sm font-medium text-mediqr-text mb-2">
                   Scanned Data:
                 </h3>
-                <code className="text-xs text-gray-600 break-all">
+                <code className="text-xs text-mediqr-text/70 break-all">
                   {scannedData}
                 </code>
               </div>
@@ -164,14 +166,14 @@ const StaffScanner = () => {
               {!scanning ? (
                 <button
                   onClick={startScanning}
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-mediqr hover:bg-mediqr-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediqr transition-colors"
                 >
                   📷 Start Scanning
                 </button>
               ) : (
                 <button
                   onClick={stopScanning}
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-mediqr-danger hover:bg-mediqr-danger/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediqr-danger transition-colors"
                 >
                   ⏹️ Stop Scanning
                 </button>
@@ -179,38 +181,38 @@ const StaffScanner = () => {
 
               <button
                 onClick={handleManualEntry}
-                className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="inline-flex items-center px-6 py-3 border border-mediqr-accent text-base font-medium rounded-md text-mediqr bg-white hover:bg-mediqr-accent-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediqr transition-colors"
               >
                 ⌨️ Manual Entry
               </button>
             </div>
 
             {/* Instructions */}
-            <div className="mt-8 text-left bg-blue-50 rounded-lg p-6">
-              <h3 className="text-lg font-medium text-blue-900 mb-4">
+            <div className="mt-8 text-left bg-mediqr-accent-light rounded-lg p-6">
+              <h3 className="text-lg font-medium text-mediqr-text mb-4">
                 How to scan:
               </h3>
-              <ul className="space-y-2 text-sm text-blue-800">
+              <ul className="space-y-2 text-sm text-mediqr-text/80">
                 <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">1.</span>
+                  <span className="text-mediqr mr-2">1.</span>
                   <span>Click "Start Scanning" to activate the camera</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">2.</span>
+                  <span className="text-mediqr mr-2">2.</span>
                   <span>Point the camera at the patient's QR code</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">3.</span>
+                  <span className="text-mediqr mr-2">3.</span>
                   <span>Wait for the QR code to be detected and processed</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">4.</span>
+                  <span className="text-mediqr mr-2">4.</span>
                   <span>
                     You'll be automatically redirected to the patient's profile
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-600 mr-2">5.</span>
+                  <span className="text-mediqr mr-2">5.</span>
                   <span>
                     Use "Manual Entry" if QR scanning is not available
                   </span>
@@ -219,16 +221,16 @@ const StaffScanner = () => {
             </div>
 
             {/* Demo Notice */}
-            <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <div className="mt-6 p-4 bg-mediqr-warning/10 border border-mediqr-warning/20 rounded-lg">
               <div className="flex">
                 <div className="flex-shrink-0">
-                  <span className="text-yellow-400">ℹ️</span>
+                  <span className="text-mediqr-warning">ℹ️</span>
                 </div>
                 <div className="ml-3">
-                  <h3 className="text-sm font-medium text-yellow-800">
+                  <h3 className="text-sm font-medium text-mediqr-warning">
                     Demo Mode
                   </h3>
-                  <div className="mt-2 text-sm text-yellow-700">
+                  <div className="mt-2 text-sm text-mediqr-warning/80">
                     <p>
                       This is a demo version. The camera functionality is
                       simulated. In a real application, this would use the

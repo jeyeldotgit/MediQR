@@ -108,15 +108,15 @@ const StaffAddRecord = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="bg-white shadow rounded-lg">
+      <div className="bg-white shadow rounded-lg border border-mediqr-accent-light">
         <div className="px-4 py-5 sm:p-6">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-2xl font-bold text-mediqr-text">
               Add Medical Record
             </h1>
             <button
               onClick={() => navigate("/staff/scanner")}
-              className="text-gray-500 hover:text-gray-700"
+              className="text-mediqr-text/70 hover:text-mediqr transition-colors"
             >
               ← Back to Scanner
             </button>
@@ -128,7 +128,7 @@ const StaffAddRecord = () => {
               <div>
                 <label
                   htmlFor="type"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-mediqr-text"
                 >
                   Record Type
                 </label>
@@ -137,7 +137,7 @@ const StaffAddRecord = () => {
                   name="type"
                   value={formData.type}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                 >
                   <option value="consultation">Consultation</option>
                   <option value="prescription">Prescription</option>
@@ -149,7 +149,7 @@ const StaffAddRecord = () => {
               <div>
                 <label
                   htmlFor="title"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-mediqr-text"
                 >
                   Title
                 </label>
@@ -160,7 +160,7 @@ const StaffAddRecord = () => {
                   required
                   value={formData.title}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   placeholder="e.g., Annual Checkup"
                 />
               </div>
@@ -169,7 +169,7 @@ const StaffAddRecord = () => {
             <div>
               <label
                 htmlFor="description"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-mediqr-text"
               >
                 Description
               </label>
@@ -180,7 +180,7 @@ const StaffAddRecord = () => {
                 required
                 value={formData.description}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                 placeholder="Brief description of the visit or procedure"
               />
             </div>
@@ -190,7 +190,7 @@ const StaffAddRecord = () => {
               <div>
                 <label
                   htmlFor="diagnosis"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-mediqr-text"
                 >
                   Diagnosis
                 </label>
@@ -200,14 +200,14 @@ const StaffAddRecord = () => {
                   id="diagnosis"
                   value={formData.diagnosis || ""}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   placeholder="e.g., Hypertension"
                 />
               </div>
               <div>
                 <label
                   htmlFor="treatment"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-mediqr-text"
                 >
                   Treatment
                 </label>
@@ -217,7 +217,7 @@ const StaffAddRecord = () => {
                   id="treatment"
                   value={formData.treatment || ""}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   placeholder="e.g., Medication adjustment"
                 />
               </div>
@@ -225,7 +225,7 @@ const StaffAddRecord = () => {
 
             {/* Medications */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-mediqr-text mb-2">
                 Medications
               </label>
               <div className="flex space-x-2 mb-2">
@@ -237,13 +237,13 @@ const StaffAddRecord = () => {
                     e.key === "Enter" &&
                     (e.preventDefault(), handleMedicationAdd())
                   }
-                  className="flex-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="flex-1 border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   placeholder="Enter medication name"
                 />
                 <button
                   type="button"
                   onClick={handleMedicationAdd}
-                  className="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                  className="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-mediqr hover:bg-mediqr-dark transition-colors"
                 >
                   Add
                 </button>
@@ -253,13 +253,13 @@ const StaffAddRecord = () => {
                   {formData.medications.map((med, index) => (
                     <span
                       key={index}
-                      className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800"
+                      className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-mediqr-success/20 text-mediqr-success"
                     >
                       {med}
                       <button
                         type="button"
                         onClick={() => handleMedicationRemove(index)}
-                        className="ml-2 text-green-600 hover:text-green-800"
+                        className="ml-2 text-mediqr-success hover:text-mediqr-success/80 transition-colors"
                       >
                         ×
                       </button>
@@ -273,7 +273,7 @@ const StaffAddRecord = () => {
             <div>
               <label
                 htmlFor="notes"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-mediqr-text"
               >
                 Additional Notes
               </label>
@@ -283,7 +283,7 @@ const StaffAddRecord = () => {
                 rows={4}
                 value={formData.notes || ""}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full border-mediqr-accent rounded-md shadow-sm focus:ring-mediqr focus:border-mediqr sm:text-sm"
                 placeholder="Any additional notes or observations"
               />
             </div>
@@ -292,8 +292,8 @@ const StaffAddRecord = () => {
               <div
                 className={`text-sm ${
                   message.includes("success")
-                    ? "text-green-600"
-                    : "text-red-600"
+                    ? "text-mediqr-success"
+                    : "text-mediqr-danger"
                 }`}
               >
                 {message}
@@ -304,14 +304,14 @@ const StaffAddRecord = () => {
               <button
                 type="button"
                 onClick={() => navigate("/staff/scanner")}
-                className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="px-4 py-2 border border-mediqr-accent text-sm font-medium rounded-md text-mediqr bg-white hover:bg-mediqr-accent-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediqr transition-colors"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={loading}
-                className="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+                className="px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-mediqr hover:bg-mediqr-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediqr disabled:opacity-50 transition-colors"
               >
                 {loading ? "Creating..." : "Create Record"}
               </button>

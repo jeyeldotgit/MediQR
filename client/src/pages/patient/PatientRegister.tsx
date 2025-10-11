@@ -71,13 +71,13 @@ const PatientRegister = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-mediqr-accent-light py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-mediqr-text">
             Patient Registration
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-2 text-center text-sm text-mediqr-text/70">
             Create your account to access medical services
           </p>
         </div>
@@ -88,7 +88,7 @@ const PatientRegister = () => {
               <div>
                 <label
                   htmlFor="firstName"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-mediqr-text"
                 >
                   First Name
                 </label>
@@ -97,7 +97,7 @@ const PatientRegister = () => {
                   name="firstName"
                   type="text"
                   required
-                  className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 appearance-none relative block w-full px-3 py-2 border border-mediqr-accent placeholder-mediqr-text/50 text-mediqr-text rounded-md focus:outline-none focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   value={formData.firstName}
                   onChange={handleInputChange}
                 />
@@ -105,7 +105,7 @@ const PatientRegister = () => {
               <div>
                 <label
                   htmlFor="lastName"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-mediqr-text"
                 >
                   Last Name
                 </label>
@@ -114,7 +114,7 @@ const PatientRegister = () => {
                   name="lastName"
                   type="text"
                   required
-                  className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 appearance-none relative block w-full px-3 py-2 border border-mediqr-accent placeholder-mediqr-text/50 text-mediqr-text rounded-md focus:outline-none focus:ring-mediqr focus:border-mediqr sm:text-sm"
                   value={formData.lastName}
                   onChange={handleInputChange}
                 />
@@ -124,7 +124,7 @@ const PatientRegister = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-mediqr-text"
               >
                 Email Address
               </label>
@@ -133,7 +133,7 @@ const PatientRegister = () => {
                 name="email"
                 type="email"
                 required
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-mediqr-accent placeholder-mediqr-text/50 text-mediqr-text rounded-md focus:outline-none focus:ring-mediqr focus:border-mediqr sm:text-sm"
                 value={formData.email}
                 onChange={handleInputChange}
               />
@@ -142,7 +142,7 @@ const PatientRegister = () => {
             <div>
               <label
                 htmlFor="phone"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-mediqr-text"
               >
                 Phone Number
               </label>
@@ -151,7 +151,7 @@ const PatientRegister = () => {
                 name="phone"
                 type="tel"
                 required
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-mediqr-accent placeholder-mediqr-text/50 text-mediqr-text rounded-md focus:outline-none focus:ring-mediqr focus:border-mediqr sm:text-sm"
                 value={formData.phone}
                 onChange={handleInputChange}
               />
@@ -160,7 +160,7 @@ const PatientRegister = () => {
             <div>
               <label
                 htmlFor="dateOfBirth"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-mediqr-text"
               >
                 Date of Birth
               </label>
@@ -169,7 +169,7 @@ const PatientRegister = () => {
                 name="dateOfBirth"
                 type="date"
                 required
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-mediqr-accent placeholder-mediqr-text/50 text-mediqr-text rounded-md focus:outline-none focus:ring-mediqr focus:border-mediqr sm:text-sm"
                 value={formData.dateOfBirth}
                 onChange={handleInputChange}
               />
@@ -178,7 +178,7 @@ const PatientRegister = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-mediqr-text"
               >
                 Password
               </label>
@@ -187,7 +187,7 @@ const PatientRegister = () => {
                 name="password"
                 type="password"
                 required
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-mediqr-accent placeholder-mediqr-text/50 text-mediqr-text rounded-md focus:outline-none focus:ring-mediqr focus:border-mediqr sm:text-sm"
                 value={formData.password}
                 onChange={handleInputChange}
               />
@@ -196,7 +196,7 @@ const PatientRegister = () => {
             <div>
               <label
                 htmlFor="confirmPassword"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-mediqr-text"
               >
                 Confirm Password
               </label>
@@ -205,7 +205,7 @@ const PatientRegister = () => {
                 name="confirmPassword"
                 type="password"
                 required
-                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 appearance-none relative block w-full px-3 py-2 border border-mediqr-accent placeholder-mediqr-text/50 text-mediqr-text rounded-md focus:outline-none focus:ring-mediqr focus:border-mediqr sm:text-sm"
                 value={formData.confirmPassword}
                 onChange={handleInputChange}
               />
@@ -213,25 +213,27 @@ const PatientRegister = () => {
           </div>
 
           {error && (
-            <div className="text-red-600 text-sm text-center">{error}</div>
+            <div className="text-mediqr-danger text-sm text-center">
+              {error}
+            </div>
           )}
 
           <div>
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-mediqr hover:bg-mediqr-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mediqr disabled:opacity-50 transition-colors"
             >
               {loading ? "Creating account..." : "Create Account"}
             </button>
           </div>
 
           <div className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-mediqr-text/70">
               Already have an account?{" "}
               <Link
                 to="/patient/login"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
+                className="font-medium text-mediqr hover:text-mediqr-dark transition-colors"
               >
                 Sign in here
               </Link>
