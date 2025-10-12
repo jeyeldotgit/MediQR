@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { generateQRCodeData, getStoredUser } from "../../utils";
+import BackendImplementationNotice from "../../components/BackendImplementationNotice";
 
 const PatientQRCode = () => {
   const [qrData, setQrData] = useState<string>("");
@@ -172,6 +173,21 @@ const PatientQRCode = () => {
               </div>
             </div>
           </div>
+
+          {/* Backend Implementation Notice */}
+          <BackendImplementationNotice
+            title="QR Code Backend Required"
+            description="The following backend endpoints need to be implemented for QR code functionality:"
+            endpoints={[
+              "GET /api/patients/:id/qr-data - Generate secure QR code data",
+              "POST /api/qr-codes/validate - Validate QR code authenticity",
+              "POST /api/qr-codes/scan - Log QR code scan events",
+              "GET /api/qr-codes/:id/history - Get QR code scan history",
+              "POST /api/qr-codes/regenerate - Regenerate QR code for security",
+              "GET /api/qr-codes/stats - Get QR code usage statistics",
+            ]}
+            icon="📱"
+          />
         </div>
       </div>
     </div>

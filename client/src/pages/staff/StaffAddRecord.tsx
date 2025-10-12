@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { simulateApiCall } from "../../utils";
 import type { MedicalRecord } from "../../types";
+import BackendImplementationNotice from "../../components/BackendImplementationNotice";
 
 const StaffAddRecord = () => {
   const navigate = useNavigate();
@@ -317,6 +318,22 @@ const StaffAddRecord = () => {
               </button>
             </div>
           </form>
+
+          {/* Backend Implementation Notice */}
+          <BackendImplementationNotice
+            title="Medical Records Backend Required"
+            description="The following backend endpoints need to be implemented for medical record management:"
+            endpoints={[
+              "POST /api/medical-records - Create new medical record",
+              "GET /api/medical-records/:patientId - Get patient's medical records",
+              "PUT /api/medical-records/:id - Update medical record",
+              "DELETE /api/medical-records/:id - Delete medical record",
+              "GET /api/medical-records/search - Search records by patient, type, date",
+              "POST /api/medical-records/:id/attachments - Upload file attachments",
+              "GET /api/medical-records/stats - Get record statistics and analytics",
+            ]}
+            icon="📋"
+          />
         </div>
       </div>
     </div>

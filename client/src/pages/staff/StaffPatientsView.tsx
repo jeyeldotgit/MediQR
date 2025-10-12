@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import type { Patient, MedicalRecord } from "../../types";
+import type { Patient } from "../../types";
+import BackendImplementationNotice from "../../components/BackendImplementationNotice";
 
 // Mock data for demonstration - will be replaced with API calls
 const mockPatients: Patient[] = [
@@ -336,49 +337,16 @@ const StaffPatientsView = () => {
           )}
 
           {/* Backend Implementation Notice */}
-          <div className="mt-8 p-4 bg-mediqr-accent-light rounded-lg">
-            <div className="flex">
-              <div className="flex-shrink-0">
-                <span className="text-mediqr">🔧</span>
-              </div>
-              <div className="ml-3">
-                <h3 className="text-sm font-medium text-mediqr-text">
-                  Backend Implementation Required
-                </h3>
-                <div className="mt-2 text-sm text-mediqr-text/80">
-                  <p className="mb-2">
-                    The following backend endpoints need to be implemented:
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 text-xs">
-                    <li>
-                      <code>GET /api/patients</code> - Fetch all patients with
-                      pagination
-                    </li>
-                    <li>
-                      <code>GET /api/patients/search</code> - Search patients by
-                      name, email, phone
-                    </li>
-                    <li>
-                      <code>GET /api/patients/filter</code> - Filter patients by
-                      status, date range
-                    </li>
-                    <li>
-                      <code>GET /api/patients/:id/visits</code> - Get patient
-                      visit history
-                    </li>
-                    <li>
-                      <code>POST /api/patients/scan</code> - Log patient
-                      scan/visit
-                    </li>
-                    <li>
-                      <code>GET /api/patients/stats</code> - Get patient
-                      statistics and counts
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <BackendImplementationNotice
+            endpoints={[
+              "GET /api/patients - Fetch all patients with pagination",
+              "GET /api/patients/search - Search patients by name, email, phone",
+              "GET /api/patients/filter - Filter patients by status, date range",
+              "GET /api/patients/:id/visits - Get patient visit history",
+              "POST /api/patients/scan - Log patient scan/visit",
+              "GET /api/patients/stats - Get patient statistics and counts",
+            ]}
+          />
         </div>
       </div>
     </div>

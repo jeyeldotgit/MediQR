@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { parseQRCodeData, simulateApiCall } from "../../utils";
+import BackendImplementationNotice from "../../components/BackendImplementationNotice";
 
 const StaffScanner = () => {
   const navigate = useNavigate();
@@ -240,6 +241,21 @@ const StaffScanner = () => {
                 </div>
               </div>
             </div>
+
+            {/* Backend Implementation Notice */}
+            <BackendImplementationNotice
+              title="QR Scanner Backend Required"
+              description="The following backend endpoints need to be implemented for QR code scanning:"
+              endpoints={[
+                "POST /api/qr-codes/scan - Process scanned QR code data",
+                "GET /api/patients/:id/verify - Verify patient identity from QR",
+                "POST /api/visits/log - Log patient visit/scan event",
+                "GET /api/camera/permissions - Handle camera access permissions",
+                "POST /api/qr-codes/validate - Validate QR code format and authenticity",
+                "GET /api/patients/:id/quick-info - Get patient quick info for scanner",
+              ]}
+              icon="📷"
+            />
           </div>
         </div>
       </div>
