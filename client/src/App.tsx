@@ -16,6 +16,7 @@ import PatientQRCode from "./pages/patient/PatientQRCode";
 // Staff Pages
 import StaffLogin from "./pages/staff/StaffLogin";
 import StaffScanner from "./pages/staff/StaffScanner";
+import StaffPatientsView from "./pages/staff/StaffPatientsView";
 import StaffPatientProfile from "./pages/staff/StaffPatientProfile";
 import StaffAddRecord from "./pages/staff/StaffAddRecord";
 
@@ -37,6 +38,7 @@ const App = () => {
       <Route path="/staff" element={<Layout />}>
         <Route path="login" element={<StaffLogin />} />
         <Route path="scanner" element={<StaffScanner />} />
+        <Route path="patients" element={<StaffPatientsView />} />
         <Route path="patient/:id" element={<StaffPatientProfile />} />
         <Route path="add-record" element={<StaffAddRecord />} />
       </Route>

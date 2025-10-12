@@ -63,6 +63,12 @@ const Layout = () => {
                     Scanner
                   </button>
                   <button
+                    onClick={() => navigate("/staff/patients")}
+                    className="text-mediqr-text/70 hover:text-mediqr px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  >
+                    Patients
+                  </button>
+                  <button
                     onClick={() => navigate("/staff/add-record")}
                     className="text-mediqr-text/70 hover:text-mediqr px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   >
