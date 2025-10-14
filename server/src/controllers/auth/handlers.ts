@@ -11,9 +11,10 @@ export const postLoginController = async (c: Context) => {
 
 export const postRegisterController = async (c: Context) => {
   try {
-    const { username, password, email } = await c.req.json();
+    // Parse the JSON body
+    const { username, email, password } = await c.req.json();
 
-    if (!username || !password || !email) {
+    if (!username || !email || !password) {
       return c.json({ error: "Missing required fields" }, 400);
     }
 
