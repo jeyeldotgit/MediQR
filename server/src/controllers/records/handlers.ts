@@ -24,3 +24,9 @@ export const postPatientRecordController = async (c: Context) => {
     return c.json({ error: "Invalid JSON body" }, 400);
   }
 };
+
+export const updatePatientRecordController = async (c: Context) => {
+  const { id, recordId } = c.req.param();
+
+  return c.json({ message: `Update record ${recordId} for patient ${id}` });
+};

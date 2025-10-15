@@ -1,5 +1,8 @@
 import { Hono } from "hono";
-import { getQrScanController, postQrGenerateController } from "./handlers.js";
+import {
+  getQrScanController,
+  postQrGenerateController,
+} from "../controllers/qr/handlers.js";
 
 const router = new Hono()
   // Define patient-related routes here

@@ -1,7 +1,10 @@
 import { Hono } from "hono";
 
 // Import necessary controllers and middlewares here
-import { getPatientController, updatePatientController } from "./handlers.js";
+import {
+  getPatientController,
+  updatePatientController,
+} from "../controllers/patients/handlers.js";
 
 // Auth Middleware is require here
 
